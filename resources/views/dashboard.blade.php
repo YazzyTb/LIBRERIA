@@ -92,7 +92,7 @@
                    </a>
                 </div>
                 <div class="relative max-w-xs overflow-hidden bg-cover bg-[50%] bg-no-repeat">
-                    <a href="">
+                    <a href="{{ route('bitacora.index') }}">
                         <img src="https://www.cursosmusicales.es/wp-content/uploads/Untitled-2-5.png" class="h-auto max-w-full rounded-lg"/>
                        <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed rounded-lg"style="background-color: hsla(0, 0%, 0%, 0.4)">
                            <div class="flex h-full items-center justify-center">
