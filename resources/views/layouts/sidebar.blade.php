@@ -97,14 +97,18 @@
                 <li>
                     <a href="{{ route('venta.index') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-Black ligth:hover:bg-gray-700">Venta</a>
                 </li>
-                <li>
-                    <a href="{{ route('promocion_producto.index') }}"  class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-black ligth:hover:bg-gray-700">Promocion</a>
-                </li>
+                
                 <li>
                     <a href="{{ route('ganancia_diaria.index') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-black ligth:hover:bg-gray-700">Reporte de pagos</a>
                 </li>
                 <li>
                     <a href="{{ route('factura.index') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-Black ligth:hover:bg-gray-700">Facturas</a>
+                </li>
+                <li>
+                    <a href="{{ route('proveedor.index') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-black ligth:hover:bg-gray-700">Proveedor</a>
+                </li>
+                <li>
+                    <a href="{{ route('compra.index') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-Black ligth:hover:bg-gray-700">Compra</a>
                 </li>
                
                 
@@ -119,17 +123,14 @@
                     <path d="M19.5 19.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
                     </svg>
 
-                <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Proveedores</span>
+                <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Promocion</span>
                 <svg class="w-3 h-3 transition-transform transform" :class="open ? 'rotate-180' : ''" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                 </svg>
             </button>
             <ul x-show="open" x-collapse class="py-2 space-y-2">
                 <li>
-                    <a href="{{ route('proveedor.index') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-black ligth:hover:bg-gray-700">Proveedor</a>
-                </li>
-                <li>
-                    <a href="{{ route('compra.index') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-Black ligth:hover:bg-gray-700">Compra</a>
+                    <a href="{{ route('promocion_producto.index') }}"  class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-black ligth:hover:bg-gray-700">Promocion</a>
                 </li>
             </ul>
         </li>    

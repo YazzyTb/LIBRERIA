@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Promociones;
 
 use App\Models\Promocion;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PromocionController extends Controller
 {

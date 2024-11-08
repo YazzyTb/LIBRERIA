@@ -1,14 +1,14 @@
 <?php
 
-use App\Http\Controllers\ComprasController;
-use App\Http\Controllers\FacturaController;
+use App\Http\Controllers\Transacciones\Compras\ComprasController;
+use App\Http\Controllers\Transacciones\Pagos\FacturaController;
 use App\Http\Controllers\Usuarios\Privilegios\PrivilegioController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\PromocionController;
-use App\Http\Controllers\ProveedoresController;
-use App\Http\Controllers\ReportepagosController;
+use App\Http\Controllers\Promociones\PromocionController;
+use App\Http\Controllers\Transacciones\Proveedores\ProveedoresController;
+use App\Http\Controllers\Transacciones\Pagos\ReporteController;
 use App\Http\Controllers\UsuariosController;
-use App\Http\Controllers\VentasController;
+use App\Http\Controllers\Transacciones\Ventas\VentasController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -78,7 +78,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/factura', [FacturaController::class, 'index'])->name('factura.index');
 
-    Route::get('/reporte', [ReportepagosController::class, 'index'])->name('ganancia_diaria.index');
+    Route::get('/reporte', [ReporteController::class, 'index'])->name('ganancia_diaria.index');
 });
 //clientes
 

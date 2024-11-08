@@ -53,11 +53,11 @@
                    </a>
                 </div>
                 <div class="relative max-w-xs overflow-hidden bg-cover bg-[50%] bg-no-repeat">
-                    <a href="{{ route('proveedor.index') }}">
+                    <a href="{{ route('promocion_producto.index') }}">
                         <img src="https://image.ondacero.es/clipping/cmsimages02/2020/08/04/352B5B0D-1B16-47F7-96CB-B14CFC3DED27/104.jpg?crop=1280,1280,x249,y0&width=1200&height=1200&optimize=low&format=webply" class="h-auto max-w-full rounded-lg"/>
                        <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed rounded-lg"style="background-color: hsla(0, 0%, 0%, 0.4)">
                            <div class="flex h-full items-center justify-center">
-                               <h1 class="text-white opacity-100 "> <strong>PROVEEDORES</strong></h1>
+                               <h1 class="text-white opacity-100 "> <strong>PROMOCIONES</strong></h1>
                            </div>
                        </div>
                    </a>
