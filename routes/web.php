@@ -72,11 +72,11 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/proveedor', [ProveedoresController::class, 'index'])->name('proveedor.index');
 
-    Route::get('/venta', [VentasController::class, 'index'])->name('venta.index');
+    //Route::get('/venta', [VentasController::class, 'index'])->name('venta.index');
 
     Route::get('/compra', [ComprasController::class, 'index'])->name('compra.index');
 
-    Route::get('/factura', [FacturaController::class, 'index'])->name('factura.index');
+    //Route::get('/factura', [FacturaController::class, 'index'])->name('factura.index');
 
     Route::get('/reporte', [ReporteController::class, 'index'])->name('ganancia_diaria.index');
 });
@@ -197,5 +197,84 @@ Route::delete('/stock/{stock}',[StockController::class,'destroy'])
        ->name('stock.delete');
 
 
+//Proveedores
+Route::get('/proveedor/create',[ProveedoresController::class,'create'])
+       ->name('proveedor.create');
+
+Route::post('/proveedor/store',[ProveedoresController::class,'store'])
+       ->name('proveedor.store');
+
+//Rutas para editar lleva aun formulario
+Route::get('/proveedor/{codigo}',[ProveedoresController::class,'edit'])
+       ->name('proveedor.edit');
+       
+// ruta para editar actualiza los datos 
+Route::put('/proveedor/{codigo}', [ProveedoresController::class, 'update'])
+       ->name('proveedor.update');
+
+//Ruta para eliminar 
+Route::delete('/proveedor/{codigo}',[ProveedoresController::class,'destroy'])
+       ->name('proveedor.delete');
+
+//genero
+// Genero
+Route::get('/genero', [GeneroController::class, 'index'])
+       ->name('genero.index');
+Route::get('/genero/create',[GeneroController::class,'create'])
+       ->name('genero.create');
+
+Route::post('/genero/store',[GeneroController::class,'store'])
+       ->name('genero.store');
+
+//Rutas para editar lleva aun formulario
+Route::get('/genero/edit/{codigo}',[GeneroController::class,'edit'])
+       ->name('genero.edit');
+       
+// ruta para editar actualiza los datos 
+Route::put('/genero/{codigo}', [GeneroController::class, 'update'])
+       ->name('genero.update');
+
+//Ruta para eliminar 
+Route::delete('/genero/{codigo}',[GeneroController::class,'destroy'])
+       ->name('genero.delete');
+
+//Ventas
+Route::get('/venta/create',[VentasController::class,'create'])
+       ->name('venta.create');
+
+Route::post('/venta/store',[VentasController::class,'store'])
+       ->name('venta.store');
+//Ruta para mostrar
+Route::get('/producto/{codigo}', [ProductoController::class, 'show'])
+       ->name('producto.show');  
+
+Route::get('/facturas', [FacturaController::class, 'index'])->name('facturas.index'); // Listado de facturas
+Route::post('/facturas', [FacturaController::class, 'store'])->name('facturas.store'); // Guardar una nueva factura
+Route::get('/facturas/{id}/pdf', [FacturaController::class, 'generatePDF'])->name('facturas.pdf'); // Generar PDF de la factura
+
+//RUTAS DE COMPRAS
+Route::get('/compra/create',[ComprasController::class,'create'])
+       ->name('compra.create');
+
+Route::post('/compra/store',[ComprasController::class,'store'])
+       ->name('compra.store');
+
+//Rutas para editar lleva aun formulario
+Route::get('/compra/edit/{codigo}',[ComprasController::class,'edit'])
+       ->name('compra.edit');
+       
+// ruta para editar actualiza los datos 
+Route::put('/compra/{codigo}', [ComprasController::class, 'update'])
+       ->name('compra.update');
+
+//Ruta para eliminar 
+Route::delete('/compra/{codigo}',[ComprasController::class,'destroy'])
+       ->name('compra.delete');
+
+Route::get('/compra/pdf/todas',[ComprasController::class,'PDFall'])
+       ->name('pdf.todas');
+
+Route::get('/compra/pdf/{nro}',[ComprasController::class,'pdf'])
+       ->name('pdf.compra');
 
 require __DIR__.'/auth.php';

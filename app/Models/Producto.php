@@ -17,7 +17,7 @@ class Producto extends Model
         'nombre',
         'precio',
         'fecha_de_publicacion',
-        //'imagen',
+        'producto_tipo',
         'editoriale_id',
     ];
     public function editorial()
@@ -38,4 +38,18 @@ class Producto extends Model
     {
         return $this->belongsToMany(Genero::class, 'producto_genero', 'producto_codigo', 'genero_id');
     }
+    public function revistas()
+    {
+        return $this->hasOne(Revista::class, 'producto_codigo','codigo');
+    }
+    public function enciclopedia()
+    {
+        return $this->hasOne(Enciclopedia::class, 'producto_codigo','codigo');
+    }
+    public function venta_Producto(){
+        return $this->hasOne(Venta_Producto::class);
+    }
+    public function compras(){
+        return $this->belongsToMany(Producto::class, 'producto_compra','producto_codigo','compra_nro');      
+       }
 }

@@ -11,4 +11,7 @@ class Cliente extends Model
     protected $primaryKey = 'ci';
     protected $fillable = ['ci','nombre','puntos']; 
     public $timestamps = false;
+    public function factura(){
+        return $this->hasMany(Factura::class);
+    }
 }

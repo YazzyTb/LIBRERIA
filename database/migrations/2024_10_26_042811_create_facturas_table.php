@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('facturas', function (Blueprint $table) {
             $table->unsignedInteger('nro')->autoIncrement(); // Número de la factura
             
-            $table->binary('formato_pago'); // Forma de pago: efectivo (0) o transacción (1)
+            //$table->binary('formato_pago'); // Forma de pago: efectivo (0) o transacción (1)
             
             $table->dateTime('fecha'); // Fecha de la venta
             

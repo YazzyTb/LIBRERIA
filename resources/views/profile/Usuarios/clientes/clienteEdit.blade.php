@@ -64,6 +64,7 @@
 
                 <!-- Botón Guardar -->
                 <div class="flex items-center justify-end">
+                    <a href="{{ route('clientes.index') }}" class="px-4 py-2 mr-2 text-gray-600 bg-gray-100 border border-gray-300 rounded-lg hover:bg-gray-200">Cancelar</a>
                     <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg shadow-lg transition duration-300">
                         Guardar
                     </button>

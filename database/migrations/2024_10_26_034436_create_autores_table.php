@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('autores', function (Blueprint $table) {
-            $table->unsignedMediumInteger('Id')->autoIncrement(); // Identificador del autor
+            $table->unsignedMediumInteger('id')->autoIncrement(); // Identificador del autor
             
             $table->string('nombre', 60); // Nombre del autor
         });

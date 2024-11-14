@@ -12,15 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ganancias', function (Blueprint $table) {
-            $table->date('fecha')->primary(); // Fecha del día
+            $table->unsignedInteger('id')->primary();
+
+            $table->date('fecha'); // Fecha del día
                         
             $table->decimal('ganancia_total', 8, 2)->unsigned(); // Ganancia total del día
             
             $table->decimal('ganancia_neta', 8, 2)->unsigned(); // Ganancia neta del día
             
-            $table->decimal('total_efectivo', 8, 2)->unsigned(); // Dinero en efectivo
+            //$table->decimal('total_efectivo', 8, 2)->unsigned(); // Dinero en efectivo
             
-            $table->decimal('total_transferencia', 8, 2)->unsigned(); // Transferencias bancarias
+            //$table->decimal('total_transferencia', 8, 2)->unsigned(); // Transferencias bancarias
         });
     }
 

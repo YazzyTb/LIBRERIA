@@ -43,7 +43,7 @@
                         
                        
                    <div class="relative max-w-xs overflow-hidden bg-cover bg-[50%] bg-no-repeat">
-                    <a href="{{ route('venta.index') }}">
+                    <a href="{{ route('venta.create') }}">
                         <img src="https://www.cripto247.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTk4MTc5NDAyOTA3NTI2MjE2/eeuu-quiere-eximir-de-ganancias-a-las-transacciones-cripto.jpg"/>
                        <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed rounded-lg"style="background-color: hsla(0, 0%, 0%, 0.4)">
                            <div class="flex h-full items-center justify-center">

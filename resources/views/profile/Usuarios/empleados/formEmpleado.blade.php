@@ -94,10 +94,9 @@
                     <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                 </div>
         
-                <div class="flex items-center justify-end mt-4">
-                    
-        
-                    <x-primary-button class="ms-4">
+                <div class="flex items-center justify-end m-4">
+                    <a href="{{ route('empleados.index') }}" class="px-4 py-2 mr-2 text-gray-600 bg-gray-100 border border-gray-300 rounded-lg hover:bg-gray-200">Cancelar</a>
+                    <x-primary-button >
                         {{ __('Registrar') }}
                     </x-primary-button>
                 </div>

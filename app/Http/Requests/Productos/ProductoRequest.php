@@ -33,7 +33,14 @@ class ProductoRequest extends FormRequest
             'precio' => ['required', 'numeric', 'regex:/^\d+(\.\d{1,2})?$/'],
             'fecha_de_publicacion' => ['required', 'date_format:Y-m-d'],
             'editoriale_id' => ['required', 'string'],
-            //'imagen' => ['nullable', 'image', 'mimes:jpeg,png,jpg', 'max:2048']
+            'producto_tipo' => ['required', 'string'],
+            'generos' => ['required', 'array'],
+            'generos.*' => ['integer', 'distinct'],
+            'edicion_libro' => ['nullable', 'integer'],
+            'edicion_enciclopedia' => ['nullable', 'integer'],
+            'tipo_de_tapa' => ['nullable', 'string'],
+            'nro' => ['nullable', 'integer'],
+            'autores' => ['nullable', 'string'],
         ];
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Bitacoras;
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Roles\RoleController;
+use App\Http\Controllers\Usuarios\Roles\RoleController ;
 use App\Http\Requests\Bitacoras\BitacoraRequest;
 use App\Models\Bitacora;
 use Illuminate\Http\Request;

@@ -18,9 +18,8 @@ class GeneroController extends Controller
         $role_privilegio = RoleController::hasPrivilegio($role_id,privilegio_id: 2);
         if(Auth::check()){
             if($role_privilegio){
-                $generos = Genero::all();
-                //Definir a donde te llevara una tabla con los generos exiostenes
-                //return view('', compact('generos'));
+                $generos=Genero::all();
+                return view('profile.Inventario.productos.producto',compact('generos'));
             }
             return redirect('dashboard');
         }
@@ -31,8 +30,7 @@ class GeneroController extends Controller
         $role_id = Auth::user()->role_id;
         $role = RoleController::hasPrivilegio($role_id,2);
         if($role){
-            //Definir donde te llevara a un formulario para crear nuevos generos
-            //return view('');
+            return view('profile.Inventario.productos.createProducto');
         }
         return view('dashboard');
     }
@@ -60,8 +58,11 @@ class GeneroController extends Controller
     public function showAGenero($nombre){
         $id = self::getGeneroId($nombre);
         $role = Genero::findOrFail($id);
-        //Definir una ruta
-        //return view('', compact('Genero'));
+        $genero = $this->getGeneroId($nombre);
+        if(!$genero){
+         return redirect()->back()->with('error', 'revista no encontrada');
+        }
+        return view('genero.show', compact('Genero'));
     }
 
     public function edit($id){
@@ -70,8 +71,7 @@ class GeneroController extends Controller
         if(Auth::check()){
             if($role_privilegio){
                 $genero = Genero::findOrFail($id);
-                //Definir una ruta para un formulario para editar
-                //return view('', compact('genero'));
+                return view('profile.Inventario.productos.editProducto',compact('genero'));
             }
             return redirect('dashboard');
         }

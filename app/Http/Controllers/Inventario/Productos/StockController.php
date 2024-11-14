@@ -25,40 +25,23 @@ class StockController extends Controller
         }
         return view('auth.login');
     }
-/*
+    
     public function edit(string $codigo){   
         $role_id = Auth::user()->role_id;
-        $role_privilegio = RoleController::hasPrivilegio($role_id,privilegio_id: 3);
-        if(Auth::check()){
-            if($role_privilegio){
-                $producto=Stock::where('producto_codigo', $codigo)->first();        
-                
-                // Crear un editForm para realizar los update de Stock 
-                
-                return view('profile.productos.editStock',compact('producto'));
+        $role_privilegio = RoleController::hasPrivilegio($role_id, privilegio_id: 3);
+        if(Auth::check()) {
+            if($role_privilegio) {
+                $stock = Stock::where('producto_codigo', $codigo)->first();        
+                if ($stock) {
+                    return view('profile.Inventario.productos.editStock', compact('stock'));
+                } else {
+                    return redirect()->back()->with('error', 'Stock no encontrado.');
+                }
             }
-            return $this->index();
+            return app(ProductoController::class)->index();
         }
         return view('auth.login');
     }
-*/
-public function edit(string $codigo)
-{   
-    $role_id = Auth::user()->role_id;
-    $role_privilegio = RoleController::hasPrivilegio($role_id, privilegio_id: 3);
-    if(Auth::check()) {
-        if($role_privilegio) {
-            $stock = Stock::where('producto_codigo', $codigo)->first();        
-            if ($stock) {
-                return view('profile.Inventario.productos.editStock', compact('stock'));
-            } else {
-                return redirect()->back()->with('error', 'Stock no encontrado.');
-            }
-        }
-        return app(ProductoController::class)->index();
-    }
-    return view('auth.login');
-}
 
 
 
@@ -111,7 +94,7 @@ public function edit(string $codigo)
     }
 
     public function destroy(string $producto_codigo){
-        $producto_stock = Stock::find($producto_codigo);
+       $producto_stock = Stock::find(strtoupper($producto_codigo));
 
         $bitacoraRequest = new BitacoraRequest([
             'tabla_afectada' => 'Stocks',
@@ -125,6 +108,6 @@ public function edit(string $codigo)
         $bitacoraController->storeDelete($bitacoraRequest);
 
         $producto_stock->delete();
-        return app(ProductoController::class)->index();       
+        return;  
     }
 }

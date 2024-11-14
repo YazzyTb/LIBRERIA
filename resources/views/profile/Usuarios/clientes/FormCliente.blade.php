@@ -57,6 +57,7 @@
                 </div>
            
                 <div class="flex items-center justify-end mt-4">
+                    <a href="{{ route('clientes.index') }}" class="px-4 py-2 text-gray-600 bg-gray-100 border border-gray-300 rounded-lg hover:bg-gray-200">Cancelar</a>
                     <x-primary-button class="ms-4">
                         {{ __('Guardar') }}
                     </x-primary-button>

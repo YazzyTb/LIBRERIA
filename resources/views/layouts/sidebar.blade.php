@@ -75,9 +75,6 @@
                 <li>
                     <a href="{{ route('producto.index') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-black ligth:hover:bg-gray-700">Productos</a>
                 </li>
-                <li>
-                    <a href="{{ route('producto.index') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-Black ligth:hover:bg-gray-700">Categoria</a>
-                </li>
             </ul>
         </li>
         <li x-data="{ open: false }">
@@ -95,14 +92,14 @@
             </button>
             <ul x-show="open" x-collapse class="py-2 space-y-2">
                 <li>
-                    <a href="{{ route('venta.index') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-Black ligth:hover:bg-gray-700">Venta</a>
+                    <a href="{{ route('venta.create') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-Black ligth:hover:bg-gray-700">Venta</a>
                 </li>
                 
                 <li>
                     <a href="{{ route('ganancia_diaria.index') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-black ligth:hover:bg-gray-700">Reporte de pagos</a>
                 </li>
                 <li>
-                    <a href="{{ route('factura.index') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-Black ligth:hover:bg-gray-700">Facturas</a>
+                    <a href="{{ route('facturas.index') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-Black ligth:hover:bg-gray-700">Facturas</a>
                 </li>
                 <li>
                     <a href="{{ route('proveedor.index') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-black ligth:hover:bg-gray-700">Proveedor</a>

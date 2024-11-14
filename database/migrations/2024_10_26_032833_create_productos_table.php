@@ -20,6 +20,8 @@ return new class extends Migration
 
             $table->date('fecha_de_publicacion'); // Fecha de publicación del producto
 
+            $table->string('producto_tipo',30);
+
             $table->unsignedSmallInteger('editoriale_id'); // ID de la editorial del producto
             
             $table->foreign('editoriale_id')->references('id')->on('editoriales'); // Llave foránea a la tabla editorial

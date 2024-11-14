@@ -49,7 +49,6 @@ class EditorialeController extends Controller
             return redirect('dashboard');
         }
         return view('auth.login');
-        
     }
 
     /**
@@ -64,14 +63,13 @@ class EditorialeController extends Controller
             'fecha_hora' => date('Y-m-d H:i:s'),
             'datos_anteriores' => null,
             'datos_nuevos' => $request->all(), // Convertir a JSON
-            'ip_address' => $request->ip(),
+            'ip_address' => request()->ip(),
         ]);
         $bitacoraController = new BitacoraController();
         $bitacoraController->storeInsert($bitacoraRequest);
 
-        return redirect()->route('editorial.index')->with('success', 'Editorial creado exitosamente');
+        return ;
     }
-
     /**
      * Display the specified resource.
      */

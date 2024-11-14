@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->unsignedTinyInteger('Edicion'); // Edición del libro publicado
             
-            $table->binary('tipo_de_tapa'); // Tapa dura (0) o tapa blanda (1)
+            $table->string('tipo_de_tapa'); // Tapa dura (0) o tapa blanda (1)
             
             $table->foreign('producto_codigo')->references('codigo')->on('productos')
                   ->onUpdate('cascade')
